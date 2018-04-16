@@ -46,6 +46,6 @@ def get_audio_file():
 
 
 def create_audio_message(message):
-    with Popen(['wine', '/home/forty/Загрузки/balcon/balcon.exe', '-i', '-n', 'Maxim',
+    with Popen(['wine', BALCON_EXE_PATH, '-i', '-n', VOICE_NAME,
                 '-w', RES_FILENAME, '-enc', 'utf8'], stdout=PIPE, stdin=PIPE, stderr=STDOUT) as p:
         p.communicate(input=message.encode('utf-8'))
